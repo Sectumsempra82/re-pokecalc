@@ -1,9 +1,9 @@
 
 import './components/Homepage/Homepage';
 import Homepage from './components/Homepage/Homepage';
-import './components/Searchbar/Searchbar';
-import Searchbar from './components/Searchbar/Searchbar';
-import Pokemon from './components/Pokemon/Pokemon';
+import './components/searchbar/searchbar';
+import Searchbar from './components/searchbar/searchbar';
+import Pokemon from './components/pokemon/pokemon';
 import React, { useState, useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 

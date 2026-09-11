@@ -58,7 +58,7 @@ export default function useHints(inputValue) {
       )
       .then((response) => {
         console.log(response.data.data.pokemon_v2_pokemon);
-        console.log(response.request.fromCache ? "Cached!" : "Not cached :(")
+        console.log(response.cached ? "Cached!" : "Not cached :(")
         if (response.data.data.pokemon_v2_pokemon) {
           var list = response.data.data.pokemon_v2_pokemon.map(pkm => pkm.name);
           setPkmList(list);

@@ -1,15 +1,8 @@
-import axios from "axios";
-import { setupCache } from 'axios-cache-adapter'
+import axios from 'axios';
+import { setupCache } from 'axios-cache-interceptor';
 
-
-
-const cache = setupCache({
-  maxAge: 15 * 60 * 1000,
-  exclude: {
-    // Only exclude PUT, PATCH and DELETE methods from cache
-    methods: ['put', 'patch', 'delete']
-  }
-})
-export const axiosCached = axios.create({
-  adapter: cache.adapter
-})
+export const axiosCached = setupCache(axios.create(), {
+  ttl: 15 * 60 * 1000,
+  methods: ['get', 'head', 'post'],
+  interpretHeader: false,
+});
